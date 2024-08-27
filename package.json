@@ -1,0 +1,30 @@
+{
+  "name": "her01-web",
+  "version": "0.1.0",
+  "private": true,
+  "author": {
+    "name": "Ta Ngoc Trung",
+    "email": "tangoctrung12123@gmail.com",
+    "url": "https://sfind-main.vercel.app"
+  },
+  "scripts": {
+    "dev": "next dev -p 3200",
+    "build": "next build",
+    "start": "next start",
+    "lint": "next lint"
+  },
+  "dependencies": {
+    "@vercel/speed-insights": "^1.0.12",
+    "next": "14.2.6",
+    "react": "18.3.1",
+    "react-dom": "18.3.1"
+  },
+  "devDependencies": {
+    "@types/node": "20.14.0",
+    "@types/react": "18.3.4",
+    "@types/react-dom": "18.3.0",
+    "eslint": "8.57.0",
+    "eslint-config-next": "14.2.6",
+    "typescript": "5.5.4"
+  }
+}
