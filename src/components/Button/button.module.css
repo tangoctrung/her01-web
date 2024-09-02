@@ -1,0 +1,31 @@
+.default{
+    padding: 12px 24px;
+    border-radius: 8px;
+    background-color: black;
+    transition: all .8s ease-in-out;
+    cursor: pointer;
+    color: white;
+    outline: none;
+    border: none;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    font-family: "Quicksand", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 500;
+    font-style: normal;
+
+    font-size: 16px;
+}
+
+.default:hover{
+    background-color: rgba(35, 33, 33, 0.855);
+}
+
+.isLoading {
+    background-color: rgba(120, 120, 120, 0.881) !important;
+    color: rgb(238, 241, 243);
+    cursor: progress;
+}

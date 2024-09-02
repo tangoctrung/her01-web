@@ -1,0 +1,46 @@
+.container {
+  display: flex;
+  position: relative;
+}
+
+.iconInput {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-40%);
+  left: 8px;
+}
+
+.default {
+  padding: 16px 24px 16px 36px;
+  border-radius: 8px;
+  transition: all 0.8s ease-in-out;
+  outline: none;
+  border: 1px solid gray;
+  width: 100%;
+  box-sizing: border-box;
+  font-size: 16px;
+
+  font-family: "Quicksand", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 500;
+  font-style: normal;
+}
+
+.error {
+  border-color: var(--text-error) !important;
+}
+
+.textError {
+  font-size: 14px;
+  line-height: 16px;
+  height: 16px;
+  color: var(--text-error);
+}
+
+.iconDisplayPassword {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-40%);
+  right: 8px;
+  cursor: pointer;
+}
