@@ -11,6 +11,8 @@
   --bg-black: black;
 
   --text-error: red;
+  --text-link: rgb(27, 96, 224);
+  --text-link-hover: rgb(53, 123, 254);
 }
 
 

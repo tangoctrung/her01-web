@@ -6,23 +6,31 @@ import Button from '@/components/Button'
 import { IconEmail } from '@/assets/icons/IconEmail'
 import { IconPassword } from '@/assets/icons/IconPassword'
 
-import style from "./login.module.css"
+import style from "./register.module.css"
 import Link from 'next/link'
 import SizedBox from '@/components/SizedBox'
 
-function FormLogin() {
+function FormRegister() {
 
     const handleSubmitLogin = (e: any) => {
         e.preventDefault();
-        const email = e.target[0].value;
-        const password = e.target[1].value;
+        const displayName = e.target[0].value;
+        const email = e.target[1].value;
+        const password = e.target[2].value;
+        const confirmPassword = e.target[3].value;
 
-        console.log({ email, password });
+        console.log({ displayName, email, password, confirmPassword });
 
     }
 
     return (
         <form onSubmit={handleSubmitLogin} className={style.form}>
+            <Input
+                hintText='Nhập tên của bạn...'
+                icon={<IconEmail height={24} width={24} />}
+                nameInput='displayName'
+            />
+            <SizedBox height={8} />
             <Input
                 hintText='Nhập email của bạn...'
                 icon={<IconEmail height={24} width={24} />}
@@ -35,21 +43,24 @@ function FormLogin() {
                 nameInput='password'
                 type={"password"}
             />
-
-            <div className={style.linkFGPassword}>
-                <Link href={"/forget-password"} className={style.link}>Quên mật khẩu?</Link>
-            </div>
-
+            <SizedBox height={8} />
+            <Input
+                hintText='Nhập lại mật khẩu'
+                icon={<IconPassword height={24} width={24} />}
+                nameInput='confirmPassword'
+                type={"password"}
+            />
+            <SizedBox height={8} />
             <div className={style.button}>
                 <Button>
-                    Đăng nhập
+                    Đăng ký
                 </Button>
             </div>
             <div className={style.linkRegister}>
-                <Link href={"/register"} className={style.link}>Bạn chưa có tài khoản? Đăng ký</Link>
+                <Link href={"/login"} className={style.link}>Bạn đã có tài khoản? Đăng nhập</Link>
             </div>
         </form>
     )
 }
 
-export default FormLogin
+export default FormRegister
