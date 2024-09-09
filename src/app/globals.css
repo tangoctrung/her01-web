@@ -4,17 +4,18 @@
 }
 
 :root {
-  --bg-primary: rgba(29, 30, 31, 0.777);
-  --bg-secondary: rgba(0, 0, 0, 0.508);
+  --bg-primary: #1E1E1E;
+  --bg-secondary: #2E2E2E;
   --bg-secondary2: rgb(66, 66, 66);
-  --bg-modal-container: rgba(0, 0, 0, 0.7);
+  --bg-modal-container: rgba(0, 0, 0, 0.3);
   --bg-surface: #F4F4F8;
 
-  --border-primary: rgb(255, 255, 255);
+  --border-primary: #F4F4F8;
 
   --text-primary: #F4F4F8;
-  --text-secondary: black;
-  --text-error: red;
+  --text-secondary: #c6c6c8;
+  --text-invert: #050506;
+  --text-error: #C70007;
   --text-link: rgb(30, 134, 246);
   --text-link-hover: rgb(5, 80, 218);
 }

@@ -4,7 +4,7 @@
     background-color: var(--bg-surface);
     transition: all .3s ease-in-out;
     cursor: pointer;
-    color: var(--text-secondary);
+    color: var(--text-invert);
     outline: none;
     border: none;
 
