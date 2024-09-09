@@ -1,6 +1,6 @@
 'use client'
 
-import React from 'react'
+import React, { useState } from 'react'
 import Input from '@/components/Input'
 import Button from '@/components/Button'
 import { IconEmail } from '@/assets/icons/IconEmail'
@@ -9,8 +9,12 @@ import { IconPassword } from '@/assets/icons/IconPassword'
 import style from "./register.module.css"
 import Link from 'next/link'
 import SizedBox from '@/components/SizedBox'
+import { IconUsername } from '@/assets/icons/IconUsername'
+import Modal from '@/components/Modal'
 
 function FormRegister() {
+
+    const [isOpenModal, setIsOpenModal] = useState(false);
 
     const handleSubmitLogin = (e: any) => {
         e.preventDefault();
@@ -21,13 +25,14 @@ function FormRegister() {
 
         console.log({ displayName, email, password, confirmPassword });
 
+        setIsOpenModal(true);
     }
 
     return (
         <form onSubmit={handleSubmitLogin} className={style.form}>
             <Input
                 hintText='Nhập tên của bạn...'
-                icon={<IconEmail height={24} width={24} />}
+                icon={<IconUsername height={20} width={20} />}
                 nameInput='displayName'
             />
             <SizedBox height={8} />
@@ -59,6 +64,12 @@ function FormRegister() {
             <div className={style.linkRegister}>
                 <Link href={"/login"} className={style.link}>Bạn đã có tài khoản? Đăng nhập</Link>
             </div>
+
+            <Modal isOpen={isOpenModal} setIsOpen={setIsOpenModal}>
+                <div>
+                    Hello, this is modal.
+                </div>
+            </Modal>
         </form>
     )
 }

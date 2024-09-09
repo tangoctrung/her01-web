@@ -1,10 +1,10 @@
 .default{
     padding: 14px 24px;
     border-radius: 8px;
-    background-color: black;
-    transition: all .8s ease-in-out;
+    background-color: var(--bg-surface);
+    transition: all .3s ease-in-out;
     cursor: pointer;
-    color: white;
+    color: var(--text-secondary);
     outline: none;
     border: none;
 
@@ -21,7 +21,7 @@
 }
 
 .default:hover{
-    background-color: rgba(35, 33, 33, 0.855);
+    background-color: rgba(231, 231, 231, 0.855);
 }
 
 .isLoading {

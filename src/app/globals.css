@@ -4,15 +4,19 @@
 }
 
 :root {
-  --blue: #1e90ff;
-  --white: #ffffff;
+  --bg-primary: rgba(29, 30, 31, 0.777);
+  --bg-secondary: rgba(0, 0, 0, 0.508);
+  --bg-secondary2: rgb(66, 66, 66);
+  --bg-modal-container: rgba(0, 0, 0, 0.7);
+  --bg-surface: #F4F4F8;
 
-  --bg-primary: white;
-  --bg-black: black;
+  --border-primary: rgb(255, 255, 255);
 
+  --text-primary: #F4F4F8;
+  --text-secondary: black;
   --text-error: red;
-  --text-link: rgb(27, 96, 224);
-  --text-link-hover: rgb(53, 123, 254);
+  --text-link: rgb(30, 134, 246);
+  --text-link-hover: rgb(5, 80, 218);
 }
 
 

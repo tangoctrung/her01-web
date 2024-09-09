@@ -10,7 +10,7 @@ export const metadata: Metadata = {
 
 function RegisterPage() {
     return (
-        <div className={style.login}>
+        <div className={style.register}>
             <div className={style.container}>
                 <h1 className={style.title}>Đăng ký - Her01</h1>
                 <FormRegister />
