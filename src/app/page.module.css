@@ -1,8 +1,27 @@
-.container {
+.containerNotFound {
   height: 100svh;
   width: 100svw;
   display: flex;
   justify-content: center;
   align-items: center;
   flex-direction: column;
+
+  background-color: var(--bg-primary);
+}
+
+.title{
+  color: var(--text-primary);
+  margin-top: 16px;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.link{
+  margin-top: 12px;
+  color: var(--text-link);
+  transition: all .3s linear;
+}
+
+.link:hover{
+  color: var(--text-link-hover);
 }

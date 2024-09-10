@@ -6,14 +6,14 @@ import style from "./page.module.css";
 
 function PageNotFound() {
     return (
-        <div className={style.container}>
+        <div className={style.containerNotFound}>
             <Image
                 src={ImageNotFound}
                 alt="notfound"
                 height={300}
             />
-            <p>Không tìm thấy trang yêu cầu</p>
-            <Link href="/">Quay về trang chủ</Link>
+            <p className={style.title}>Không tìm thấy trang yêu cầu</p>
+            <Link href="/" className={style.link}>Quay về trang chủ</Link>
         </div>
     )
 }
