@@ -11,10 +11,7 @@ export const metadata: Metadata = {
 function ForgetPassword() {
     return (
         <div className={style.forgetPassword}>
-            <div className={style.container}>
-                <h1 className={style.title}>Quên mật khẩu - Her01</h1>
-                <FormForgetPassword />
-            </div>
+            <FormForgetPassword />
         </div>
     )
 }

@@ -1,0 +1,10 @@
+.inputOtp{
+    padding: 12px;
+    border-radius: 8px;
+    outline: none;
+    border: none;
+    font-size: 28px;
+    font-weight: 600;
+    background-color: var(--bg-secondary2);
+    color: var(--text-primary);
+}

@@ -7,63 +7,85 @@ import { IconEmail } from '@/assets/icons/IconEmail'
 import { IconPassword } from '@/assets/icons/IconPassword'
 
 import style from "./forget-password.module.css"
-import Link from 'next/link'
 import SizedBox from '@/components/SizedBox'
+import OTPInput from 'react-otp-input'
+import styleCommon from "@/app/common.module.css"
+import { useRouter } from 'next/navigation'
 
 function FormForgetPassword() {
 
-    const [step, setStep] = useState<"email" | "code" | "password">("password")
+    const [step, setStep] = useState<"email" | "code" | "password">("email")
+    const [otp, setOtp] = useState('');
+    const router = useRouter()
 
-    const handleSubmitLogin = (e: any) => {
+
+    const handleClickButton = (e: any) => {
         e.preventDefault();
-        const email = e.target[0].value;
-        const password = e.target[1].value;
+        if (step === "email") {
+            setStep("code")
+            return;
+        }
 
-        console.log({ email, password });
+        if (step === "code") {
+            setStep("password")
+            return;
+        }
 
+        if (step === "password") {
+            router.push("/login")
+            return;
+        }
     }
 
     return (
-        <form onSubmit={handleSubmitLogin} className={style.form}>
-            {step === "email" &&
-                <Input
-                    hintText='Nhập email của bạn...'
-                    icon={<IconEmail height={24} width={24} />}
-                    nameInput='email'
-                />}
-            {step === "code" &&
-                <Input
-                    hintText='Nhập mã của bạn...'
-                    icon={<IconEmail height={24} width={24} />}
-                    nameInput='email'
-                />}
-            {step === "password" &&
-                <>
+        <div className={style.container}>
+            <h1 className={style.title}>{step === "email" ? "Nhập email của bạn" : (step === "code" ? "Nhập mã được gửi về email" : "Tạo mật khẩu mới")}</h1>
+            <form onSubmit={handleClickButton} className={style.form}>
+                {step === "email" &&
                     <Input
-                        hintText='Nhập mật khẩu mới của bạn...'
-                        icon={<IconPassword height={24} width={24} />}
-                        nameInput='password'
-                        type={"password"}
-                    />
-                    <SizedBox height={8} />
-                    <Input
-                        hintText='Nhập lại mật khẩu'
-                        icon={<IconPassword height={24} width={24} />}
-                        nameInput='confirmPassword'
-                        type={"password"}
-                    />
-                </>
-            }
-            <SizedBox height={8} />
-            <div className={style.button}>
-                <Button>
-                    Tiếp tục
-                </Button>
-            </div>
-            <div className={style.linkRegister}>
-                <Link href={"/login"} className={style.link}>Quay lại đăng nhập</Link>
-            </div>
-        </form>
+                        hintText='Nhập email của bạn...'
+                        icon={<IconEmail height={24} width={24} />}
+                        nameInput='email'
+                    />}
+                {step === "code" &&
+                    <div className={style.containerOtpInput}>
+                        <OTPInput
+                            value={otp}
+                            onChange={setOtp}
+                            numInputs={6}
+                            renderSeparator={<SizedBox width={10} />}
+                            renderInput={(props) => <input {...props} className={styleCommon.inputOtp} />}
+                        />
+                    </div>
+                }
+                {step === "password" &&
+                    <>
+                        <Input
+                            hintText='Nhập mật khẩu mới của bạn...'
+                            icon={<IconPassword height={24} width={24} />}
+                            nameInput='password'
+                            type={"password"}
+                        />
+                        <SizedBox height={8} />
+                        <Input
+                            hintText='Nhập lại mật khẩu'
+                            icon={<IconPassword height={24} width={24} />}
+                            nameInput='confirmPassword'
+                            type={"password"}
+                        />
+                    </>
+                }
+                <SizedBox height={8} />
+                <div className={style.button}>
+                    <Button onClick={handleClickButton}>
+                        Tiếp tục
+                    </Button>
+                </div>
+                <div className={style.linkRegister}>
+                    <p className={style.link}>{step === "email" ? "Quay lại đăng nhập" : "Quay lại"}</p>
+                </div>
+            </form>
+        </div>
     )
 }
 
