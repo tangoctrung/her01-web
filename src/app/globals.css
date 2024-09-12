@@ -9,12 +9,15 @@
   --bg-secondary2: rgb(66, 66, 66);
   --bg-modal-container: rgba(0, 0, 0, 0.3);
   --bg-surface: #F4F4F8;
+  --bg-disable: #1c1d21;
 
   --border-primary: #F4F4F8;
 
   --text-primary: #F4F4F8;
   --text-secondary: #c6c6c8;
   --text-invert: #050506;
+  --text-tertiary: #76767f;
+  --text-light: #b8babd;
   --text-error: #C70007;
   --text-link: rgb(30, 134, 246);
   --text-link-hover: rgb(5, 80, 218);

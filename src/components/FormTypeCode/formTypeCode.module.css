@@ -1,3 +1,16 @@
+.containerOtpInput{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    margin-bottom: 16px;
+}
+
+.button{
+    width: 100%;
+    display: flex;
+    justify-content: center;
+}
+
 .inputOtp{
     padding: 12px;
     border-radius: 8px;

@@ -7,17 +7,19 @@ type Props = {
     size?: String;
     onClick?: any;
     isLoading?: boolean;
+    isDisable?: boolean;
 }
 function Button({
     children,
     type = "default",
     size = "default",
     isLoading = false,
+    isDisable = false,
     onClick,
 }: Props) {
     return (
         <button
-            className={`${style.default} ${isLoading ? style.isLoading : ''}`}
+            className={`${style.default} ${isLoading ? style.isLoading : ''} ${isDisable ? style.isDisable : ''}`}
             onClick={onClick}
         >
             {children ?? "Submit"}

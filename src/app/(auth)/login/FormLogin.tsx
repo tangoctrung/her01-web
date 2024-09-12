@@ -1,14 +1,14 @@
 'use client'
 
 import React from 'react'
-import Input from '@/components/Input'
-import Button from '@/components/Button'
+import Input from '@/components/comon/Input'
+import Button from '@/components/comon/Button'
 import { IconEmail } from '@/assets/icons/IconEmail'
 import { IconPassword } from '@/assets/icons/IconPassword'
 
 import style from "./login.module.css"
 import Link from 'next/link'
-import SizedBox from '@/components/SizedBox'
+import SizedBox from '@/components/comon/SizedBox'
 import { useRouter } from 'next/navigation'
 
 function FormLogin() {
