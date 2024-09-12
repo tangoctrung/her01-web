@@ -11,6 +11,7 @@ import SizedBox from '@/components/SizedBox'
 import OTPInput from 'react-otp-input'
 import styleCommon from "@/app/common.module.css"
 import { useRouter } from 'next/navigation'
+import { IconArrowLeft } from '@/assets/icons/IconArrowLeft'
 
 function FormForgetPassword() {
 
@@ -37,9 +38,39 @@ function FormForgetPassword() {
         }
     }
 
+    const handleClickBack = () => {
+        if (step === "email") {
+            router.push("/login")
+            return;
+        }
+
+        if (step === "code") {
+            setStep("email")
+            return;
+        }
+
+        if (step === "password") {
+            setStep("email")
+            return;
+        }
+    }
+
+    const handleTypeOTP = (value: string) => {
+        setOtp(value)
+        if (value?.length === 6) {
+            // gửi api verify otp
+        }
+    }
+
     return (
         <div className={style.container}>
-            <h1 className={style.title}>{step === "email" ? "Nhập email của bạn" : (step === "code" ? "Nhập mã được gửi về email" : "Tạo mật khẩu mới")}</h1>
+            <div className={style.containerTitle}>
+                <div className={style.iconLeft} onClick={handleClickBack}>
+                    <IconArrowLeft />
+                </div>
+                <h1 className={style.title}>{step === "email" ? "Nhập email của bạn" : (step === "code" ? "Nhập mã được gửi về email" : "Tạo mật khẩu mới")}</h1>
+                <SizedBox width={38} />
+            </div>
             <form onSubmit={handleClickButton} className={style.form}>
                 {step === "email" &&
                     <Input
@@ -51,7 +82,7 @@ function FormForgetPassword() {
                     <div className={style.containerOtpInput}>
                         <OTPInput
                             value={otp}
-                            onChange={setOtp}
+                            onChange={handleTypeOTP}
                             numInputs={6}
                             renderSeparator={<SizedBox width={10} />}
                             renderInput={(props) => <input {...props} className={styleCommon.inputOtp} />}
@@ -78,11 +109,8 @@ function FormForgetPassword() {
                 <SizedBox height={8} />
                 <div className={style.button}>
                     <Button onClick={handleClickButton}>
-                        Tiếp tục
+                        {step === "password" ? "Hoàn thành" : "Tiếp tục"}
                     </Button>
-                </div>
-                <div className={style.linkRegister}>
-                    <p className={style.link}>{step === "email" ? "Quay lại đăng nhập" : "Quay lại"}</p>
                 </div>
             </form>
         </div>

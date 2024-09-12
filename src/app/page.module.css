@@ -25,3 +25,8 @@
 .link:hover{
   color: var(--text-link-hover);
 }
+
+.container{
+  background-color: var(--bg-primary);
+  min-height: 100svh;
+}

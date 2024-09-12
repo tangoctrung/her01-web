@@ -13,10 +13,7 @@ function LoginPage() {
 
     return (
         <div className={style.login}>
-            <div className={style.container}>
-                <h1 className={style.title}>Đăng nhập - Her01</h1>
-                <FormLogin />
-            </div>
+            <FormLogin />
         </div>
     )
 }

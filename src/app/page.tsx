@@ -2,6 +2,7 @@ import { IconAddFile } from "@/assets/icons/IconAddFile";
 import Button from "@/components/Button";
 import Input from "@/components/Input";
 import { Metadata } from "next";
+import style from "@/app/page.module.css";
 
 export const metadata: Metadata = {
   title: 'Trang chủ',
@@ -9,7 +10,7 @@ export const metadata: Metadata = {
 }
 export default function Home() {
   return (
-    <div>
+    <div className={style.container}>
       <Button isLoading={false}>
         <IconAddFile width={20} height={20} /> Thêm file
       </Button>
