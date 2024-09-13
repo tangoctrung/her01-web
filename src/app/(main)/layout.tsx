@@ -1,4 +1,5 @@
 import Navbar from "@/components/Navbar";
+import style from "./layout.module.css";
 
 export default function Layout({
     children,
@@ -6,7 +7,7 @@ export default function Layout({
     children: React.ReactNode;
 }>) {
     return (
-        <div>
+        <div className={style.containerLayoutMain}>
             <Navbar />
             {children}
         </div>

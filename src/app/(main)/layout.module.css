@@ -1,0 +1,4 @@
+.containerLayoutMain{
+    background-color: var(--bg-primary);
+    min-height: 100svh;
+}

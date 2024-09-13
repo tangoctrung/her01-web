@@ -4,6 +4,7 @@ import { SpeedInsights } from "@vercel/speed-insights/next"
 import "./globals.css";
 import { ToastContainer } from "react-toastify";
 import 'react-toastify/dist/ReactToastify.css';
+import Navbar from "@/components/Navbar";
 
 const quicksand = Quicksand({ subsets: ["latin"] });
 
