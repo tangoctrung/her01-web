@@ -1,8 +1,11 @@
 import React from 'react'
+import style from "./layout.module.css"
 
 function PageMess() {
     return (
-        <div>PageMess</div>
+        <div className={style.pageMessage}>
+            PageMess
+        </div>
     )
 }
 

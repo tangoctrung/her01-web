@@ -10,6 +10,9 @@
   --bg-modal-container: rgba(0, 0, 0, 0.3);
   --bg-surface: #F4F4F8;
   --bg-disable: #1c1d21;
+  --bg-link: rgb(30, 134, 246);
+  --bg-scrollbar-thumb: #b1b1b5;
+
 
   --border-primary: #F4F4F8;
 
@@ -21,6 +24,8 @@
   --text-error: #C70007;
   --text-link: rgb(30, 134, 246);
   --text-link-hover: rgb(5, 80, 218);
+
+  --height-navbar: 50px;
 }
 
 

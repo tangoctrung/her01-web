@@ -13,6 +13,8 @@ type Props = {
     icon?: ReactElement;
     error?: String;
     nameInput?: string;
+    px?: number;
+    py?: number;
 }
 
 function Input({
@@ -23,6 +25,8 @@ function Input({
     error = "",
     nameInput = "",
     onChange,
+    px = 36,
+    py = 16,
 }: Props) {
 
     const [isShowPassword, setIsShowPassword] = useState(type === "password" ? false : true);
@@ -40,6 +44,9 @@ function Input({
                     </div>}
                 <input
                     className={`${style.default} ${error ? style.error : ''}`}
+                    style={{
+                        padding: `${py}px ${px}px`
+                    }}
                     placeholder={hintText}
                     onChange={onChange}
                     name={nameInput}

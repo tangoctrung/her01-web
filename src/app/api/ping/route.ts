@@ -3,7 +3,7 @@ import { sendMessageTelegram } from "@/utils/telegram";
 
 export const GET = async () => {
   try {
-    fetch("https://sfind.onrender.com/api/ping")
+    fetch("https://sfind.onrender.com/api/ping", { signal: AbortSignal.timeout(5000) })
     .then((res) => {
       sendMessageTelegram("Ping host sfind.onrender.com success");
     })
