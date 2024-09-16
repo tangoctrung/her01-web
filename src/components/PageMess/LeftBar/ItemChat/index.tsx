@@ -1,15 +1,37 @@
+'use client'
 import Image from 'next/image'
 import React from 'react'
 import AvatarDefault from "@/assets/images/avatarDefault.png";
 import style from "./itemChat.module.css"
+import { usePathname, useRouter } from 'next/navigation';
+import { timeSince } from '@/utils/formatTime';
 
-function ItemChat() {
+
+type Props = {
+    data: any;
+}
+function ItemChat({
+    data,
+}: Props) {
+
+    const router = useRouter();
+    const pathName = usePathname();
+
+    console.log({ pathName });
+
+
+    const handleClickItemChat = () => {
+        router.push(`/mess/${data?.id}`)
+    }
     return (
-        <div className={style.itemChat}>
+        <div
+            className={`${style.itemChat} ${pathName?.split("/mess/")[1] === data?.id ? style.activeItemChat : ""}`}
+            onClick={handleClickItemChat}
+        >
             <div className={style.containerChat}>
                 <div className={style.avatar}>
                     <Image
-                        src={AvatarDefault}
+                        src={data?.avatar}
                         alt=''
                         className={style.imageAvatar}
                         height={50}
@@ -17,16 +39,17 @@ function ItemChat() {
                     />
                 </div>
                 <div className={style.infoChat}>
-                    <b className={style.nameChat}>Ta Ngoc Trung</b>
-                    <div className={style.messChat}>
-                        <p className={style.messText}>Bạn: hello ban nhe hihi xin chao moi nguoi ne</p>
-                        <p className={style.messTime}> • 7 giờ</p>
+                    <b className={style.nameChat}>{data?.name}</b>
+                    <div className={`${style.messChat} ${data?.isNoti ? style.messNoti : ''}`}>
+                        <p className={style.messText}>{data?.lastMessage}</p>
+                        <p className={style.messTime}> • {timeSince(new Date(data?.time))}</p>
                     </div>
                 </div>
             </div>
-            <div className={style.containerDotNoti}>
-                <p className={style.dotNoti}></p>
-            </div>
+            {data?.isNoti &&
+                <div className={style.containerDotNoti}>
+                    <p className={style.dotNoti}></p>
+                </div>}
         </div>
     )
 }

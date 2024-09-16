@@ -1,8 +1,9 @@
 import React from 'react'
+import style from "./pageDetail.module.css"
 
 function PageMessDetail() {
     return (
-        <div>PageMessDetail</div>
+        <div className={style.containerPageDetail}>PageMessDetail</div>
     )
 }
 

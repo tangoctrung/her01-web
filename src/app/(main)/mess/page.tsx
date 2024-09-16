@@ -4,7 +4,7 @@ import style from "./layout.module.css"
 function PageMess() {
     return (
         <div className={style.pageMessage}>
-            PageMess
+            Hãy chọn một người/nhóm để liên lạc
         </div>
     )
 }
