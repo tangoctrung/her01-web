@@ -1,7 +1,7 @@
 .containerListMessage{
     position: absolute;
     width: 100%;
-    height: calc(100% - 100px);
+    height: calc(100% - 86px);
     top: 50px;
     left: 0px;
     overflow: scroll;

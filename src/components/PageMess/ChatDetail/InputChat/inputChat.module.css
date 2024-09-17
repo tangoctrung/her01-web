@@ -1,10 +1,76 @@
 .containerInputChat{
-    position: absolute;
-
     width: 100%;
-    height: 50px;
+    height: 42px;
+
+    position: absolute;
     bottom: 0;
     left: 0;
 
+    display: flex;
+    justify-content: space-between;
+}
+
+.containerIcon{
+    width: 36px;
+    height: 36px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.5s linear;
     background-color: var(--bg-secondary2);
+}
+
+.containerIcon:hover{
+    opacity: 0.7;
+}
+
+.formInput{
+    width: calc(100% - 88px);
+    height: 36px;
+    margin-left: 8px;
+    margin-right: 8px;
+
+    position: relative;
+}
+
+.input{
+    width: 100%;
+    height: 100%;
+
+    border-radius: 100px;
+    box-sizing: border-box;
+    padding: 6px 12px 6px 12px;
+    font-size: 16px;
+
+    outline: none;
+    border: 1px solid var(--border-primary);
+    background-color: var(--bg-secondary);
+    color: var(--text-primary);
+}
+
+.iconInput{
+    position: absolute;
+    right: 2px;
+    top: 2.5px;
+
+    width: 32px;
+    height: 32px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border-radius: 100px;
+    cursor: pointer;
+    transition: all 0.5s linear;
+    background-color: var(--bg-secondary2);
+}
+
+.iconInput:hover{
+    opacity: 0.7;
+}
+.iconEmoji{
+    font-size: 22px;
 }
