@@ -1,0 +1,16 @@
+.containerListMessage{
+    position: absolute;
+    width: 100%;
+    height: calc(100% - 100px);
+    top: 50px;
+    left: 0px;
+    overflow: scroll;
+}
+
+.listMessage{
+    overflow-y: hidden;
+}
+
+.containerListMessage::-webkit-scrollbar{
+    width: 0px;
+}
