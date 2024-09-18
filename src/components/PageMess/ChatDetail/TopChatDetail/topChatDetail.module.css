@@ -4,11 +4,14 @@
     width: 100%;
     top: 0px;
     left: 0px;
-    height: 50px;
 
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    padding-bottom: 6px;
+    box-sizing: border-box;
+    box-shadow: rgba(175, 175, 176, 0.1) 0px 1px 0px;
 }
 .nameChat{
     display: flex;

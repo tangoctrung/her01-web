@@ -8,9 +8,43 @@
 }
 
 .listMessage{
+    margin-top: 20px;
     overflow-y: hidden;
 }
 
 .containerListMessage::-webkit-scrollbar{
     width: 0px;
+}
+
+.containerMessage {
+    width: 100%;
+    display: flex;
+    align-items: center;
+}
+.messageText{
+    display: inline-block;
+    max-width: 60%;
+    width: auto;
+    padding: 8px 12px;
+    border-radius: 12px;
+    margin: 4px 0px;
+    word-wrap: break-word;
+}
+.myMessage{
+    justify-content: end;
+}
+.yourMessage{
+    justify-content: start;
+}
+.bgMyMessage{
+    background-color: var(--bg-message2);
+}
+.bgYourMessage{
+    background-color: var(--bg-message1);
+}
+
+@media screen and (min-width: 768px) and (max-width: 1366px) {
+    .messageText {
+        max-width: 70%;
+    }
 }
