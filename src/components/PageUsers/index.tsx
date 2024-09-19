@@ -3,6 +3,7 @@ import React, { useState } from 'react'
 import style from "./pageUser.module.css"
 import Input from '@/components/comon/Input'
 import { IoIosSearch } from 'react-icons/io'
+import CardInfoUser from './CardInfoUser'
 
 function PageUsers() {
 
@@ -42,6 +43,14 @@ function PageUsers() {
                         noError={true}
                     />
                 </div>
+            </div>
+
+            <div className={style.content}>
+                {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((item: any, index: number) => (
+                    <div key={index}>
+                        <CardInfoUser />
+                    </div>
+                ))}
             </div>
         </div>
     )

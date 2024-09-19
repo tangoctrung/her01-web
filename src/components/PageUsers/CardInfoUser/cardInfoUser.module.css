@@ -1,0 +1,6 @@
+.cardInfoUser{
+    width: 150px;
+    height: 250px;
+    background-color: var(--bg-secondary2);
+    border-radius: 12px;
+}
