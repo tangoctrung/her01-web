@@ -15,6 +15,7 @@ type Props = {
     nameInput?: string;
     px?: number;
     py?: number;
+    noError?: boolean;
 }
 
 function Input({
@@ -27,6 +28,7 @@ function Input({
     onChange,
     px = 36,
     py = 16,
+    noError = false,
 }: Props) {
 
     const [isShowPassword, setIsShowPassword] = useState(type === "password" ? false : true);
@@ -57,7 +59,7 @@ function Input({
                         {isShowPassword ? <IconHidePassword /> : <IconShowPassword />}
                     </div>}
             </div>
-            <p className={style.textError}>{error}</p>
+            {!noError && <p className={style.textError}>{error}</p>}
         </>
     )
 }

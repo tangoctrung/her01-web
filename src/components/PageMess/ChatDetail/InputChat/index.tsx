@@ -4,7 +4,7 @@ import style from "./inputChat.module.css"
 import { FaRegFileImage } from "react-icons/fa6";
 import { LuSticker } from "react-icons/lu";
 import { MdInsertEmoticon } from "react-icons/md";
-import EmojiPicker from 'emoji-picker-react';
+import EmojiPicker, { Theme } from 'emoji-picker-react';
 
 type Props = {
     setDataMessage: any;
@@ -20,7 +20,9 @@ function InputChat({
         setMessageText(e.target.value)
     }
     const handleSendMessage = (e: any) => {
-        e.preventDefault();
+        e?.preventDefault();
+        console.log({ messageText });
+
         const message = {
             content: messageText,
             time: new Date().getTime(),
@@ -55,7 +57,7 @@ function InputChat({
                 {isShowEmoji &&
                     <div className={style.containerEmoji}>
                         <div className={style.outsideEmoji} onClick={() => setIsShowEmoji(false)}></div>
-                        <EmojiPicker onEmojiClick={handleClickEmoji} />
+                        <EmojiPicker onEmojiClick={handleClickEmoji} theme={Theme.DARK} />
                     </div>}
             </form>
             <div className={`${style.containerIcon}`}>

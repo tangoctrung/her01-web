@@ -1,0 +1,7 @@
+.pageUser{
+    width: 100svw;
+    height: calc(100svh - 50px);
+
+    display: flex;
+    justify-content: center;
+}
