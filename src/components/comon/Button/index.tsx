@@ -1,4 +1,4 @@
-import React, { ReactElement, ReactNode } from 'react'
+import React, { ReactNode } from 'react'
 import style from "./button.module.css"
 
 type Props = {
