@@ -57,7 +57,7 @@ function PageUsers() {
             </div>
 
             <div className={style.content}>
-                <div className={style.listCard}>
+                <div className={`${tabActive === "all" ? style.listCard : style.listCardNew}`}>
                     {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17].map((item: any, index: number) => (
                         <div key={index}>
                             <CardInfoUser type={params.get("tab") || "all"} data={{}} />

@@ -16,6 +16,8 @@
     display: flex;
     justify-content: space-between;
     align-items: center;
+
+    padding: 12px 6px;
 }
 .action{
     display: flex;
@@ -50,7 +52,7 @@
 
 .content{
     margin-top: 20px;
-    height: calc(100% - 56px);
+    max-height: calc(100% - 56px);
     overflow: scroll;
     display: flex;
     justify-content: center;
@@ -64,12 +66,21 @@
     gap: 10px;
     grid-template-columns: repeat(5, minmax(0, 1fr));
 }
+.listCardNew{
+    display: grid;
+    gap: 10px;
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+}
+
 @media screen and (max-width: 768px) {
     .containerUser{
         width: 90%;
     }
     .listCard{
         grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .listCardNew{
+        grid-template-columns: repeat(1, minmax(0, 1fr));
     }
     .textAction{
         display: none;
@@ -86,6 +97,9 @@
     .listCard{
         grid-template-columns: repeat(3, minmax(0, 1fr));
     }
+    .listCardNew{
+        grid-template-columns: repeat(1, minmax(0, 1fr));
+    }
     .textAction{
         display: none;
     }
@@ -100,6 +114,9 @@
     }
     .listCard{
         grid-template-columns: repeat(4, minmax(0, 1fr));
+    }
+    .listCardNew{
+        grid-template-columns: repeat(2, minmax(0, 1fr));
     }
     .textAction{
         display: block;

@@ -1,6 +1,6 @@
 .cardInfoUser{
     width: 210px;
-    height: 340px;
+    height: 300px;
     background-color: var(--bg-secondary2);
     border-radius: 12px;
     padding: 12px 10px;
@@ -78,9 +78,69 @@
     background-color: var(--bg-primary);
     color: var(--text-primary);
 }
+
+
+/* Card user new */
+.cardInfoUserRequest{
+    width: 380px;
+    height: 100px;
+    background-color: var(--bg-secondary2);
+    border-radius: 12px;
+    padding: 12px 10px;
+    box-sizing: border-box;
+    color: var(--text-primary);
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+
+    position: relative;
+}
+.infoUserRequest{
+    display: flex;
+    align-items: center;
+}
+.infoUserNameRequest{
+    margin-left: 8px;
+}
+.actionRequest{
+    min-width: 90px;
+    display: flex;
+    flex-direction: column;
+}
 .textTime{
     font-size: 12px;
     width: 100%;
     text-align: end;
     color: var(--text-tertiary);
+    position: absolute;
+    bottom: 4px;
+    left: 8px;
+    text-align: start;
+}
+.textAlignEnd{
+    display: inline;
+    text-align: end !important;
+    left: -8px;
+}
+
+@media screen and (min-width: 1024px) and (max-width: 1366px) {
+    .avatar{
+        width: 60px;
+        height: 60px;
+    }
+}
+
+@media screen and (min-width: 768px) and (max-width: 1024px) {
+    .avatar{
+        width: 50px;
+        height: 50px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .avatar{
+        width: 36px;
+        height: 36px;
+    }
 }
